@@ -42,7 +42,7 @@ const Home = () => {
         </form>
       </section>
 
-      <footer>
+      <footer className="home__footer">
         <div className="pokeball">
           <div className="rectangle__red"></div>
           <div className="elipse1"></div>
