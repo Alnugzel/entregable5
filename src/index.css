@@ -4,6 +4,16 @@
   margin: 0;
 }
 
+:root {
+  --primary: #dd1a1a;
+  --secondary: #0c0c0c;
+  --common-text: #333333;
+  --special-text: #fe1936;
+  --circle--background-1: #ffffff;
+  --circle--background-2: #212121;
+  --circle--border: #212121;
+}
+
 h1,
 h2,
 h3,
@@ -22,4 +32,10 @@ ul {
 img {
   width: 100%;
   display: block;
+}
+
+input,
+button {
+  font-family: inherit;
+  border: none;
 }

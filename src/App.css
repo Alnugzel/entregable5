@@ -118,3 +118,40 @@ body {
   height: 2em;
   bottom: 1em;
 }
+
+.pokedex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex__welcome {
+  color: var(--common-text);
+  text-align: left;
+  font-size: 1rem;
+  margin-top: 2em;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.pokedex__welcome span {
+  color: var(--special-text);
+}
+
+.pokemon {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  min-width: 350px;
+}
+
+@media (min-width: 700px) {
+  .pokemon {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

@@ -1,6 +1,6 @@
 .pokecard {
   width: 100%;
-  max-width: 328px;
+  max-width: 300px;
   font-size: 1rem;
   border-radius: 0.5em;
   border: 0.5em solid currentColor;
@@ -13,7 +13,7 @@
 }
 
 .pokecard__header {
-  aspect-ratio: 2;
+  aspect-ratio: 2.5;
   position: relative;
   background-color: currentColor;
 }
@@ -27,7 +27,7 @@
 }
 
 .pokecard__body {
-  padding-top: 3em;
+  padding-top: 2.5em;
 }
 .pokecard__name {
   text-align: center;
@@ -58,10 +58,11 @@
 }
 
 .pokecard__stats {
-  padding: 0.5em 0.5em 2em;
+  padding: 0.5em 0.5em 0.5em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  align-items: end;
   gap: 1em 0.2em;
 }
 
@@ -97,4 +98,15 @@
 
 .grass {
   color: chartreuse;
+}
+
+@media (min-width: 700px) {
+  .pokecard {
+    max-width: 225px;
+  }
+
+  .pokecard__stats {
+    padding: 0.5em 0.5em 0.5em;
+    gap: 0.5em 0.2em;
+  }
 }

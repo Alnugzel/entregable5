@@ -1,0 +1,75 @@
+.headerapi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.headerapi__container {
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  height: 80px;
+}
+
+.headerapi__content-img {
+}
+
+.headerapi__img {
+  position: absolute;
+  top: 1.6em;
+  left: 1em;
+  z-index: 6000;
+  width: 180px;
+}
+
+.headerapi__red {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 65%;
+  background-color: var(--primary);
+  z-index: 5000;
+}
+
+.headerapi__black {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary);
+}
+
+.headerapi__circles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerapi__circle-1 {
+  position: absolute;
+  right: 1.5em;
+  bottom: -1em;
+  background-color: var(--circle--background-1);
+  height: 4em;
+  width: 4em;
+  border: 5px solid var(--secondary);
+  border-radius: 50%;
+  z-index: 6000;
+}
+
+.headerapi__circle-2 {
+  position: absolute;
+  right: 2.5em;
+  bottom: -0.1em;
+  background-color: var(--circle--background-2);
+  height: 2em;
+  width: 2em;
+  border: 5px solid var(--secondary);
+  border-radius: 50%;
+  z-index: 7000;
+}

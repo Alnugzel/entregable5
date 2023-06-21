@@ -4,13 +4,14 @@ import { useSelector } from "react-redux";
 import Pokemon from "../components/Pokedex/Pokemon";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import HeaderApi from "../utils/HeaderApi";
 
 const Pokedex = () => {
   const trainerName = useSelector((states) => states.trainerName);
 
   const [selectValue, setSelectValue] = useState("all-pokemons");
 
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
+  const url = "https://pokeapi.co/api/v2/pokemon?limit=16&offset=0";
   const urlTypes = "https://pokeapi.co/api/v2/type";
 
   const [pokemons, getAllPokemons, hasError, setPokemons] = useFetch(url);
@@ -49,13 +50,19 @@ const Pokedex = () => {
     setSelectValue(e.target.value);
   };
   return (
-    <div>
-      <h3>Welcomen {trainerName}, you can find all pokemons here</h3>
-      <form onSubmit={handleSubmit}>
-        <input ref={searchPokemon} type="text" />
-        <button>Search</button>
-        <select onChange={handleChangeType}>
-          <option value="all-pokemons">All Pokemons</option>
+    <div className="pokedex">
+      <HeaderApi />
+      <h3 className="pokedex__welcome">
+        <span className="pokedex__welcome-span">Welcome {trainerName},</span>{" "}
+        you can find all pokemons here
+      </h3>
+      <form className="pokedex__form" onSubmit={handleSubmit}>
+        <input className="pokedex__input" ref={searchPokemon} type="text" />
+        <button className="pokedex__btn">Search</button>
+        <select className="pokedex__select" onChange={handleChangeType}>
+          <option className="pokedex__select-option" value="all-pokemons">
+            All Pokemons
+          </option>
           {types?.results.map((typeInfo) => (
             <option value={typeInfo.url} key={typeInfo.url}>
               {typeInfo.name}
