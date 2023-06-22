@@ -11,7 +11,7 @@ const Pokedex = () => {
 
   const [selectValue, setSelectValue] = useState("all-pokemons");
 
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=16&offset=0";
+  const url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
   const urlTypes = "https://pokeapi.co/api/v2/type";
 
   const [pokemons, getAllPokemons, hasError, setPokemons] = useFetch(url);
@@ -57,8 +57,11 @@ const Pokedex = () => {
         you can find all pokemons here
       </h3>
       <form className="pokedex__form" onSubmit={handleSubmit}>
-        <input className="pokedex__input" ref={searchPokemon} type="text" />
-        <button className="pokedex__btn">Search</button>
+        <div>
+          <input className="pokedex__input" ref={searchPokemon} type="text" />
+          <button className="pokedex__btn">Search</button>
+        </div>
+
         <select className="pokedex__select" onChange={handleChangeType}>
           <option className="pokedex__select-option" value="all-pokemons">
             All Pokemons

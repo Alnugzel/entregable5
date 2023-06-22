@@ -35,7 +35,8 @@ img {
 }
 
 input,
-button {
+button,
+select {
   font-family: inherit;
   border: none;
 }

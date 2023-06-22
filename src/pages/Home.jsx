@@ -22,22 +22,26 @@ const Home = () => {
   console.log(trainerName);
 
   return (
-    <article className="content__home">
+    <article className="home">
       <header>
-        <div className="content__img">
-          <img src="/pokedex.png" alt="" />
+        <div className="home__content-img">
+          <img className="home__img" src="/pokedex.png" alt="" />
         </div>
       </header>
 
-      <section className="sention__home">
+      <section className="section__home">
         <h2 className="home__title">Hi Trainer!</h2>
         <p className="home_p">
           To start in this application, please, give me your trainer name.
         </p>
         <form onSubmit={handleSubmit}>
-          <div className="content__input">
-            <input ref={trainerNameRef} className="trainer__name" type="text" />
-            <button className="trainer__button">Catch them all!</button>
+          <div className="home__input">
+            <input
+              ref={trainerNameRef}
+              className="home__trainer-name"
+              type="text"
+            />
+            <button className="home__trainer-btn">Catch them all!</button>
           </div>
         </form>
       </section>
