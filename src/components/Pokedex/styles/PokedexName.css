@@ -1,0 +1,13 @@
+body {
+}
+
+.pokedexName {
+  width: 100%;
+
+  max-width: 700px;
+  font-size: 1rem;
+  border-radius: 0.5em;
+  border: 0.5em solid currentColor;
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
