@@ -1,13 +1,91 @@
 body {
 }
 
+.pokedexName__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6em;
+}
+
 .pokedexName {
   width: 100%;
 
   max-width: 700px;
   font-size: 1rem;
   border-radius: 0.5em;
-  border: 0.5em solid currentColor;
+  border: 3px solid currentColor;
   cursor: pointer;
   transition: transform 150ms ease;
+}
+
+.pokedexName_header {
+  aspect-ratio: 4;
+  position: relative;
+  background-color: aqua;
+}
+
+.pokedexName__img {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  bottom: 1em;
+  transform: translateX(-50%);
+}
+
+.pokedexName__id {
+  text-align: center;
+}
+
+.pokedexName__id h1 {
+  margin-top: 0.5em;
+}
+
+.pokedexName__name {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.pokedexName__name::before {
+  content: "-";
+}
+
+.pokedexName__name::after {
+  content: "-";
+}
+
+.pokedexName__sizes {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: rows;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1.5em;
+}
+
+.pokedexName__sizes p:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.pokedexName__sizes p:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.pokedexName__sizes p span:nth-child(1) {
+  font-size: 0.7rem;
+}
+
+.pokedexName__sizes p span:nth-child(2) {
+  font-size: 1rem;
+  font-weight: 600;
 }
