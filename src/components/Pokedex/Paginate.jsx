@@ -21,7 +21,7 @@ const Paginate = ({
         onClick={previousPage}
         disabled={initPage === 1}
       >
-        Anterior
+        Prev
       </button>
       <span className="number__page">{initPage}</span>
       <button
@@ -29,7 +29,7 @@ const Paginate = ({
         onClick={nextPage}
         disabled={currentPokemons?.length < pokemonsPerPage}
       >
-        Siguiente
+        Next
       </button>
     </div>
   );
