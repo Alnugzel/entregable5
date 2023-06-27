@@ -17,6 +17,10 @@ const PokedexName = () => {
 
   console.log(pokemon);
 
+  const style = {
+    width: (pokemon?.stats[0].base_stat * 150) / 100,
+  };
+
   return (
     <>
       <HeaderApi />
@@ -69,6 +73,9 @@ const PokedexName = () => {
                     <span>{pokemon?.stats[0].stat.name}</span>{" "}
                     <span>{pokemon?.stats[0].base_stat}</span>
                   </li>
+                  <div className="p1">
+                    <div className="p2" style={style}></div>
+                  </div>
                   <li>
                     <span>{pokemon?.stats[1].stat.name}</span>{" "}
                     <span>{pokemon?.stats[1].base_stat}</span>

@@ -1,7 +1,8 @@
 .pokecard {
   width: 100%;
 
-  max-width: 300px;
+  min-width: 300px;
+  max-width: 400px;
   font-size: 1rem;
   border-radius: 0.5em;
   border: 0.5em solid currentColor;
@@ -32,7 +33,7 @@
 .pokecard__name {
   text-align: center;
   text-transform: capitalize;
-  font-size: 1em;
+  font-size: 1.5rem;
   color: currentColor;
 }
 
@@ -88,6 +89,7 @@
 
 .fire {
   color: rgb(128, 36, 0);
+
   .pokecard__header {
     background: linear-gradient(
       176.37deg,
@@ -112,7 +114,6 @@
 
 .bug {
   color: #4ab648;
-
   .pokecard__header {
     background: linear-gradient(
       177.56deg,
@@ -125,7 +126,6 @@
 
 .grass {
   color: #416460;
-
   .pokecard__header {
     background: linear-gradient(
       178.92deg,
@@ -138,7 +138,6 @@
 
 .normal {
   color: #735259;
-
   .pokecard__header {
     background: linear-gradient(
       181.51deg,
@@ -151,7 +150,6 @@
 
 .fighting {
   color: #96402a;
-
   .pokecard__header {
     background: linear-gradient(
       176.83deg,
@@ -164,7 +162,6 @@
 
 .poison {
   color: #5b3184;
-
   .pokecard__header {
     background: linear-gradient(
       177.03deg,
@@ -177,7 +174,6 @@
 
 .ghost {
   color: #323569;
-
   .pokecard__header {
     background: linear-gradient(
       177.03deg,
@@ -190,7 +186,6 @@
 
 .rock {
   color: #7e7e7e;
-
   .pokecard__header {
     background: linear-gradient(
       177.03deg,
@@ -203,7 +198,6 @@
 
 .dark {
   color: #030706;
-
   .pokecard__header {
     background: linear-gradient(
       177.03deg,
@@ -216,7 +210,6 @@
 
 .ice {
   color: #6fbedf;
-
   .pokecard__header {
     background: linear-gradient(
       177.03deg,
@@ -229,7 +222,6 @@
 
 .steel {
   color: #5e736c;
-
   .pokecard__header {
     background: linear-gradient(
       179.75deg,
@@ -242,7 +234,6 @@
 
 .electric {
   color: #a8a609;
-
   .pokecard__header {
     background: linear-gradient(
       179.75deg,
@@ -255,7 +246,6 @@
 
 .fairy {
   color: #971b45;
-
   .pokecard__header {
     background: linear-gradient(
       179.75deg,
@@ -268,7 +258,6 @@
 
 .psychic {
   color: #9e0df1;
-
   .pokecard__header {
     background: linear-gradient(
       179.75deg,
@@ -281,7 +270,6 @@
 
 .ground {
   color: #654008;
-
   .pokecard__header {
     background: linear-gradient(
       179.75deg,

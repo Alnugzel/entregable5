@@ -1,14 +1,35 @@
 import React from "react";
 import PokeCard from "./PokeCard";
+import Paginate from "./Paginate";
 
-const Pokemon = ({ pokemons }) => {
-  console.log(pokemons);
+const Pokemon = ({
+  currentPokemons,
+  setInitPage,
+  initPage,
+  pokemonsPerPage,
+}) => {
   return (
-    <div className="pokemon">
-      {pokemons?.map((pokemon) => (
-        <PokeCard key={pokemon.url} url={pokemon.url} />
-      ))}
-    </div>
+    <>
+      <Paginate
+        setInitPage={setInitPage}
+        initPage={initPage}
+        currentPokemons={currentPokemons}
+        pokemonsPerPage={pokemonsPerPage}
+      />
+
+      <div className="pokemon">
+        {currentPokemons?.map((pokemon) => (
+          <PokeCard key={pokemon.url} url={pokemon.url} />
+        ))}
+      </div>
+
+      <Paginate
+        setInitPage={setInitPage}
+        initPage={initPage}
+        currentPokemons={currentPokemons}
+        pokemonsPerPage={pokemonsPerPage}
+      />
+    </>
   );
 };
 

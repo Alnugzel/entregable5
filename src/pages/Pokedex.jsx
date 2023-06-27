@@ -11,10 +11,18 @@ const Pokedex = () => {
 
   const [selectValue, setSelectValue] = useState("all-pokemons");
 
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
+  const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=1250";
   const urlTypes = "https://pokeapi.co/api/v2/type";
 
   const [pokemons, getAllPokemons, hasError, setPokemons] = useFetch(url);
+
+  const [initPage, setInitPage] = useState(1);
+  const pokemonsPerPage = 20;
+
+  const lastItem = initPage * pokemonsPerPage;
+  const firstItem = lastItem - pokemonsPerPage;
+  const currentPokemons = pokemons?.results.slice(firstItem, lastItem);
+
   const [types, getAllTypes] = useFetch(urlTypes);
 
   useEffect(() => {
@@ -73,7 +81,13 @@ const Pokedex = () => {
           ))}
         </select>
       </form>
-      <Pokemon pokemons={pokemons?.results} />
+      <Pokemon
+        currentPokemons={currentPokemons}
+        setInitPage={setInitPage}
+        initPage={initPage}
+        // pokemons={pokemons?.results}
+        pokemonsPerPage={pokemonsPerPage}
+      />
     </div>
   );
 };
