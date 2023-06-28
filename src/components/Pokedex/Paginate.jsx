@@ -1,4 +1,4 @@
-import "./styles/paginate.css";
+import "./styles/Paginate.css";
 
 const Paginate = ({
   setInitPage,
