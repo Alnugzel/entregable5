@@ -17,7 +17,7 @@ const Pokedex = () => {
   const [pokemons, getAllPokemons, hasError, setPokemons] = useFetch(url);
 
   const [initPage, setInitPage] = useState(1);
-  const pokemonsPerPage = 20;
+  const pokemonsPerPage = 12;
 
   const lastItem = initPage * pokemonsPerPage;
   const firstItem = lastItem - pokemonsPerPage;

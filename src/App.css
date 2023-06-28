@@ -154,6 +154,11 @@ body {
   border: none;
   padding: 1em;
   color: white;
+  transition: transform 1s;
+}
+
+.pokedex__btn:hover {
+  transform: scale(1.2);
 }
 
 .pokedex__select {

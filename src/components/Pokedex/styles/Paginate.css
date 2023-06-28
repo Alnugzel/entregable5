@@ -1,0 +1,35 @@
+.paginate {
+  padding: 0.5em 2em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn__prev::before {
+  content: "< ";
+}
+.btn__prev {
+  cursor: pointer;
+  padding: 1em 2em;
+  background-color: var(--primary);
+  border-radius: 1em;
+  color: white;
+  display: flex;
+}
+
+.btn__next {
+  cursor: pointer;
+  padding: 1em 2em;
+  background-color: var(--primary);
+  border-radius: 1em;
+  color: white;
+  display: flex;
+}
+
+.btn__next::after {
+  content: " >";
+}

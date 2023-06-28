@@ -3,6 +3,7 @@ import useFetch from "../hook/useFetch";
 import { useEffect } from "react";
 import "../components/Pokedex/styles/PokedexName.css";
 import HeaderApi from "../utils/HeaderApi";
+import { useNavigate } from "react-router-dom";
 
 const PokedexName = () => {
   const { name } = useParams();
@@ -17,13 +18,22 @@ const PokedexName = () => {
 
   console.log(pokemon);
 
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    navigate(`/pokedex/`);
+  };
+
   return (
     <>
       <HeaderApi />
+      <button onClick={handleSubmit} className="btn__return">
+        <i class="bx bx-arrow-back"></i>
+      </button>
       <div className={`pokedexName__container ${pokemon?.types[0].type.name}`}>
         <article className="pokedexName">
           {hasError ? (
-            <h1>This pokemon is not exist</h1>
+            <h1 className="error__msg">This pokemon is not exist 😣</h1>
           ) : (
             <>
               <header
@@ -55,28 +65,32 @@ const PokedexName = () => {
                   </p>
                 </div>
                 <div className="pokedexName__content">
-                  <h4>Type</h4>
-                  <ul className="pokedexName__types">
-                    {pokemon?.types.map((typeInfo) => (
-                      <li
-                        className={`pokedexName__types-item type-${typeInfo.type.name}`}
-                        key={typeInfo.type.url}
-                      >
-                        {typeInfo.type.name}
-                      </li>
-                    ))}
-                  </ul>
-                  <h4>Abilities</h4>
-                  <ul className="pokedexName__abilities">
-                    {pokemon?.abilities.map((abiliti) => (
-                      <li
-                        className="pokedexName__abilities-item"
-                        key={abiliti.ability.url}
-                      >
-                        {abiliti.ability.name}
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <h4>Type</h4>
+                    <ul className="pokedexName__types">
+                      {pokemon?.types.map((typeInfo) => (
+                        <li
+                          className={`pokedexName__types-item type-${typeInfo.type.name}`}
+                          key={typeInfo.type.url}
+                        >
+                          {typeInfo.type.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Abilities</h4>
+                    <ul className="pokedexName__abilities">
+                      {pokemon?.abilities.map((abiliti) => (
+                        <li
+                          className="pokedexName__abilities-item"
+                          key={abiliti.ability.url}
+                        >
+                          {abiliti.ability.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </section>
 
@@ -108,20 +122,24 @@ const PokedexName = () => {
           )}
         </article>
 
-        <section className="pokedexName__moves">
-          <div className="pokedexName__separator">
-            <img
-              className="pokedexName__movements-img"
-              src="/movements.png"
-              alt="movements"
-            />
-          </div>
-          {pokemon?.moves.map((movement) => (
-            <p className="pokedexName__moves-item" key={movement.move.url}>
-              {movement.move.name}
-            </p>
-          ))}
-        </section>
+        {hasError ? (
+          ""
+        ) : (
+          <section className="pokedexName__moves">
+            <div className="pokedexName__separator">
+              <img
+                className="pokedexName__movements-img"
+                src="/movements.png"
+                alt="movements"
+              />
+            </div>
+            {pokemon?.moves.map((movement) => (
+              <p className="pokedexName__moves-item" key={movement.move.url}>
+                {movement.move.name}
+              </p>
+            ))}
+          </section>
+        )}
       </div>
     </>
   );
